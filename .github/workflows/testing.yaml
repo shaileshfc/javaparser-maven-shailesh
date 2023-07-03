@@ -12,7 +12,7 @@ on:
   workflow_dispatch:
 
 #define variables
-env:
+#env: 
   #add variables and values
 
 jobs:
