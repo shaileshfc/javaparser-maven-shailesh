@@ -16,8 +16,7 @@ env:
   #add variables and values
 
 jobs:
-  # SonarScan of the Java Code in the repository
-   sonarscan:
+    sonarscan:
     runs-on: ubuntu-latest    
  # Checks-out your repository under 
    - uses: actions/checkout@v3
