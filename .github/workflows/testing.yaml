@@ -1,4 +1,4 @@
-name: This workflow is to build docker image for java application.
+name: This workflow iss to build docker image for java application.
 
 # Controls when the workflow will run
 on:
