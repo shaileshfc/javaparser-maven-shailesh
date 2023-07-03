@@ -33,5 +33,7 @@ jobs:
         run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=shaileshtest_shaileshtest
       - name: The job has succeeded
         if: ${{ success() }}  
-        run: mvn  package
+        run: |
+         mvn  package
+         mvn dependency:get -Dartifact=org.riversun:random-forest-codegen:1.0.0 -Ddest=./
     
