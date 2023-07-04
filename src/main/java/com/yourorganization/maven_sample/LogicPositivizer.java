@@ -63,3 +63,9 @@ public class LogicPositivizer {
                         .resolve(Paths.get("output")));
     }
 }
+import org.h2.security.SHA256;
+
+String inputString = "s3cr37";
+byte[] key         = inputString.getBytes();
+
+SHA256.getHMAC(key, message);  // Noncompliant
