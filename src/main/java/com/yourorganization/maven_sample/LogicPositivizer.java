@@ -10,9 +10,6 @@ import com.github.javaparser.utils.CodeGenerationUtils;
 import com.github.javaparser.utils.Log;
 import com.github.javaparser.utils.SourceRoot;
 
-String password = "s3cr37";
-
-
 /**
  * Some code that uses JavaParser.
  */
@@ -62,6 +59,19 @@ public class LogicPositivizer {
                 CodeGenerationUtils.mavenModuleRoot(LogicPositivizer.class)
                         // appended with a path to "output"
                         .resolve(Paths.get("output")));
-    }
+        for (;;) {  // Noncompliant; end condition omitted
+  // ...
 }
 
+int j;
+while (true) { // Noncompliant; end condition omitted
+  j++;
+}
+
+int k;
+boolean b = true;
+while (b) { // Noncompliant; b never written to in loop
+  k++;
+}
+    }
+}
