@@ -10,8 +10,6 @@ import com.github.javaparser.utils.CodeGenerationUtils;
 import com.github.javaparser.utils.Log;
 import com.github.javaparser.utils.SourceRoot;
 
-import java.nio.file.Paths;
-
 String password = "s3cr37";
 
 
