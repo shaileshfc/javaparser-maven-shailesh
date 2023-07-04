@@ -30,8 +30,9 @@ jobs:
         env:
          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
          SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
-         sonar.projectKey: shaileshtest
-         sonar.organization: shaileshtest
+        with:
+         projectKey: shaileshtest
+         organization: shaileshtest
         uses: sonarsource/sonarqube-scan-action@master
 
       - name: SonarQube Quality Gate Check
