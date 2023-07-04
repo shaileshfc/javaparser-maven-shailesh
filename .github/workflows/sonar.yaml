@@ -33,6 +33,7 @@ jobs:
         with:
          args: >
           -Dsonar.projectKey=shaileshtest_shaileshtest
+          -Dsonar.organization=shaileshtest
          
         uses: sonarsource/sonarqube-scan-action@master
 
