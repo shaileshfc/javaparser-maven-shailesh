@@ -37,6 +37,7 @@ public class LogicPositivizer {
              * Change it to "==" and switch the "then" and "else" statements around.
              */
             @Override
+            @Deprecated
             public Visitable visit(IfStmt n, Void arg) {
                 // Figure out what to get and what to cast simply by looking at the AST in a debugger! 
                 n.getCondition().ifBinaryExpr(binaryExpr -> {
