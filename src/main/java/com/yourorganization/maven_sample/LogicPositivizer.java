@@ -11,12 +11,9 @@ import com.github.javaparser.utils.Log;
 import com.github.javaparser.utils.SourceRoot;
 
 import java.nio.file.Paths;
-import org.h2.security.SHA256;
 
-String inputString = "s3cr37";
-byte[] key         = inputString.getBytes();
+String password = "s3cr37";
 
-SHA256.getHMAC(key, message);  // Noncompliant
 
 /**
  * Some code that uses JavaParser.
