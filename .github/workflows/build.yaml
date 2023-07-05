@@ -39,9 +39,8 @@ jobs:
        # uses: SonarSource/sonarqube-quality-gate-action@d304d050d930b02a896b0f85935344f023928496
         uses: SonarSource/sonarqube-quality-gate-action@v1.1.0
            
-      - name: The job has succeeded
-        if: ${{ success() }}  
+      - name: Maven build Jar file and publish to nexus  # this commands needs to be changed      
         run: |
          mvn  package
-         mvn dependency:get -Dartifact=org.riversun:random-forest-codegen:1.0.0 -Ddest=./
+         
     
