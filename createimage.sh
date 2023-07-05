@@ -16,3 +16,4 @@ echo "Building image '$DOCKER_IMAGE_NAME:$DOCKER_IMAGE_TAG'..."
 # https://docs.docker.com/build/
 #docker buildx build $DOCKER_OPTIONS -t "$DOCKER_IMAGE_NAME":"$DOCKER_IMAGE_TAG" .
 ls -ltr
+cat /home/runner/work/_temp/1ec01ba2-3940-485e-ba2e-71d19a2423f3.sh
