@@ -8,6 +8,6 @@ jobs:
       - uses: actions/checkout@v2
       - name: Run script file
         run: |
-          chmod +x ./public/createimage.sh
-          ./public/createimage.sh
+          chmod +x createimage.sh
+          createimage.sh
         shell: bash
