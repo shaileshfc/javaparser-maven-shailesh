@@ -1,9 +1,9 @@
 name: build and push docker image
 
-on:push
+on: push
  jobs:
   name: build dockerimage
   runs-on: ubuntu-latest
-  run:createimage.sh
+  run: createimage.sh
  
  
