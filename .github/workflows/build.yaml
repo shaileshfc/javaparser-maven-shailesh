@@ -42,5 +42,15 @@ jobs:
       - name: Maven build Jar file and publish to nexus  # this commands needs to be changed      
         run: |
          mvn  package
-         
+      - name: Nexus Repo Publish  #https://github.com/marketplace/actions/nexus-repository-publisher-for-github-actions
+        uses: sonatype-nexus-community/nexus-repo-github-action@master
+        with:
+         serverUrl: http://163c6cdd.ngrok.io
+         username: admin
+         password: ${{ secrets.password }}
+         format: maven2
+         repository: maven-releases
+         coordinates: groupId=com.example artifactId=app version=1.0.0
+         assets: extension=jar
+         filename: ./target/app-1.0.0.jar
     
