@@ -9,5 +9,5 @@ jobs:
       - name: Run script file
         run: |
           sudo chmod +x createimage.sh
-          sudo createimage.sh
+          sudo ./createimage.sh
         shell: bash
