@@ -1,3 +1,5 @@
+
+name: Workflow to sonarscan repository, build jar file with maven and publish to Nexus
 on:
  workflow_dispatch:
 
