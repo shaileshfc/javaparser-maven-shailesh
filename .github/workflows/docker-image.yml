@@ -18,7 +18,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build the Docker image
-      run: ddocker build -t my_image .
+      run: docker build -t my_image .
   test:
     runs-on: ubuntu-latest
     steps:
