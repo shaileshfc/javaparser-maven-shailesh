@@ -35,7 +35,7 @@ jobs:
       env:
        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
       with:
-       sarif_file: 'trivy-results.sarif'
+       sarif_file: './trivy-results.sarif'
 
 #   - name: Aqua Security Trivy
   # You may pin to the exact commit or the version.
