@@ -1,0 +1,48 @@
+name: Build and Push Docker Image to Docker hHub
+
+on:
+ workflow_dispatch
+
+env:
+  # Use docker.io for Docker Hub if empty
+  REGISTRY: docker.io
+  # github.repository as <account>/<repo>
+  IMAGE_NAME: java
+
+jobs:
+
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Build the Docker image
+      run: docker build -t my_image --rm=false --progress=plain  .
+  
+             
+    - name: Scan Docker Image for CVE
+      uses: aquasecurity/trivy-action@master
+      with:
+       image-ref:  my_image
+       format: 'table'
+       ignore-unfixed: true
+       exit-code: ${{ inputs.fail-on-cve == true && '1' || '0' }}
+       severity: 'CRITICAL,HIGH'
+       security-checks: 'vuln'
+
+    - name: Upload Trivy scan results to GitHub Security tab
+      uses: github/codeql-action/upload-sarif@v2
+      env:
+       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
+      with:
+       sarif_file: 'trivy-results.sarif'
+
+#   - name: Aqua Security Trivy
+  # You may pin to the exact commit or the version.
+  # uses: aquasecurity/trivy-action@41f05d9ecffa2ed3f1580af306000f734b733e54
+      #  uses: aquasecurity/trivy-action@0.11.2
+     #   with:
+      # Scan type to use for scanning vulnerability
+       #  scan-type: image
+      # image reference(for backward compatibility)
+        # image-ref: my_image
