@@ -20,6 +20,20 @@
         <sonar.organization>shaileshtest</sonar.organization>
         <sonar.host.url>https://sonarcloud.io</sonar.host.url>
     </properties>
+    <distributionManagement>
+	<repository>
+		<id>devopsschool</id>
+		<name>maven-releases</name>
+		<url>http://172.28.184.13:8081/repository/maven-releases/</url>
+	</repository>
+ 
+	<snapshotRepository>
+		<id>devopsschool</id>
+		<name>maven-snapshots</name>
+		<url>http://172.28.184.13:8081/repository/maven-snapshots/</url>
+	</snapshotRepository>
+
+    </distributionManagement>
 
     <dependencies>
         <!-- Here are all your dependencies. Currently only one. These are automatically downloaded from https://mvnrepository.com/ -->
