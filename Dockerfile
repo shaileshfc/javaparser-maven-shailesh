@@ -6,9 +6,9 @@
 # Stage 1 (to create a "build" image, ~360MB)
 FROM eclipse-temurin:17-jdk-alpine AS builder
 
-WORKDIR
-Learn more about the "WORKDIR" Dockerfile command.
- /app
+WORKDIR /app
+
+ 
 
 COPY .mvn/ .mvn
 COPY mvnw pom.xml ./
