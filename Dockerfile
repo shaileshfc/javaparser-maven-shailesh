@@ -5,6 +5,18 @@
 
 # Stage 1 (to create a "build" image, ~360MB)
 FROM eclipse-temurin:17-jdk-alpine AS builder
+
+WORKDIR
+Learn more about the "WORKDIR" Dockerfile command.
+ /app
+
+COPY .mvn/ .mvn
+COPY mvnw pom.xml ./
+RUN ./mvnw dependency:resolve
+
+COPY src ./src
+
+CMD ["./mvnw", "spring-boot:run"]
 # smoke test to verify if java is available
 # RUN java -version
 
