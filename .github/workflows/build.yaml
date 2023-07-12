@@ -33,13 +33,13 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=shaileshtest_shaileshtest -Dsonar.qualitygate.wait=true
-      - name: SonarQube Quality Gate Check
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+     # - name: SonarQube Quality Gate Check
+      #  env:
+       #   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
+        #  SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
        # You may pin to the exact commit or the version.
        # uses: SonarSource/sonarqube-quality-gate-action@d304d050d930b02a896b0f85935344f023928496
-        uses: SonarSource/sonarqube-quality-gate-action@v1.1.0
+        #uses: SonarSource/sonarqube-quality-gate-action@v1.1.0
            
       - name: Maven build Jar file and publish to nexus  # this commands needs to be changed      
         run: |
