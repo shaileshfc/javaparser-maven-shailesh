@@ -45,7 +45,7 @@ jobs:
         run: |
          mvn  package
       - name: Nexus Repo Publish  #https://github.com/marketplace/actions/nexus-repository-publisher-for-github-actions
-        run: mvn -V -B deploy -DskipTests -Dbuild.number=1.1.1 #sonatype-nexus-community/nexus-repo-github-action@master
+        run: mvn -V -B deploy -DskipTests -DaltDeploymentRepository=server.id::default::admin/admin123@http://172.28.184.13:8081/repository/public -Dbuild.number=1.1.1 #sonatype-nexus-community/nexus-repo-github-action@master
         env:
          serverUrl: http://172.28.184.13:8081/
          username: admin
