@@ -47,7 +47,7 @@ jobs:
       - name: Nexus Repo Publish  #https://github.com/marketplace/actions/nexus-repository-publisher-for-github-actions
         uses: sonatype-nexus-community/nexus-repo-github-action@master
         with:
-         serverUrl: http://163c6cdd.ngrok.io
+         serverUrl: http://172.28.184.13:8081/
          username: admin
          #password: ${{ secrets.password }}
          password: admin123
