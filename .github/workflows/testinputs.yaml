@@ -1,4 +1,4 @@
-name: Build workflow Test variables
+name: Build workflow Testm variables
 
 on:
   push:
