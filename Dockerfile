@@ -10,13 +10,13 @@ WORKDIR /app
 
  
 
-COPY .mvn/ .mvn
-COPY mvnw pom.xml ./
-RUN ./mvnw dependency:resolve
+# COPY .mvn/ .mvn
+# COPY mvnw pom.xml ./
+# RUN ./mvnw dependency:resolve
 
-COPY src ./src
+# COPY src ./src
 
-CMD ["./mvnw", "spring-boot:run"]
+# CMD ["./mvnw", "spring-boot:run"]
 # smoke test to verify if java is available
 # RUN java -version
 
