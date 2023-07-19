@@ -19,7 +19,9 @@ jobs:
     - name: Build the Docker image
       run: docker build -t my_image --rm=false --progress=plain  .
     - name: cat the output file
-      run: wget https://github.com/aquasecurity/trivy/blob/main/contrib/html.tpl
+      run: | 
+            wget https://github.com/aquasecurity/trivy/blob/main/contrib/html.tpl
+            pwd
              
     - name: Run Trivy vulnerability scanner
       uses: aquasecurity/trivy-action@7b7aa264d83dc58691451798b4d117d53d21edfe
