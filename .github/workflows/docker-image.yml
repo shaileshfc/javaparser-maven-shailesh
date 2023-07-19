@@ -27,7 +27,7 @@ jobs:
       uses: aquasecurity/trivy-action@7b7aa264d83dc58691451798b4d117d53d21edfe
       with:
          image-ref: my_image #'docker.io/my-organization/my-app:${{ github.sha }}'
-         format: 'html'
+         format: 'template'
          template: '/home/runner/work/javaparser-maven-shailesh/javaparser-maven-shailesh/html.tpl'
          output: 'trivy-results.html'
          severity: 'CRITICAL,HIGH'
