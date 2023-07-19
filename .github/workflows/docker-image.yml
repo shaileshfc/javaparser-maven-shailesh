@@ -18,14 +18,15 @@ jobs:
     - uses: actions/checkout@v3
     - name: Build the Docker image
       run: docker build -t my_image --rm=false --progress=plain  .
-  
+    - name: cat the output file
+      run: wget https://github.com/aquasecurity/trivy/blob/main/contrib/html.tpl
              
     - name: Run Trivy vulnerability scanner
       uses: aquasecurity/trivy-action@7b7aa264d83dc58691451798b4d117d53d21edfe
       with:
          image-ref: my_image #'docker.io/my-organization/my-app:${{ github.sha }}'
          format: 'html'
-         template: '@/contrib/html.tpl'
+         template: '@./html.tpl'
          output: 'trivy-results.html'
          severity: 'CRITICAL,HIGH'
      
