@@ -24,13 +24,13 @@ jobs:
       uses: aquasecurity/trivy-action@7b7aa264d83dc58691451798b4d117d53d21edfe
       with:
          image-ref: my_image #'docker.io/my-organization/my-app:${{ github.sha }}'
-         format: 'template'
-         template: '@/contrib/sarif.tpl'
-         output: 'trivy-results.sarif'
+         format: 'html'
+         #template: '@/contrib/sarif.tpl'
+         output: 'trivy-results.html'
          severity: 'CRITICAL,HIGH'
      
     - name: Build the Docker image
-      run: cat trivy-results.sarif
+      run: cat trivy-results.html
 
     - name: Upload Trivy scan results to GitHub Security tab
       uses: github/codeql-action/upload-sarif@v2
