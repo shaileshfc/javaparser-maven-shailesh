@@ -25,11 +25,11 @@ jobs:
       with:
          image-ref: my_image #'docker.io/my-organization/my-app:${{ github.sha }}'
          format: 'html'
-         #template: '@/contrib/sarif.tpl'
+         template: '@/contrib/html.tpl'
          output: 'trivy-results.html'
          severity: 'CRITICAL,HIGH'
      
-    - name: Build the Docker image
+    - name: cat the output file
       run: cat trivy-results.html
 
     - name: Upload Trivy scan results to GitHub Security tab
