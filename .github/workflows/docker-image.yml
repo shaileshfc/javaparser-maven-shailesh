@@ -26,7 +26,7 @@ jobs:
       with:
          image-ref: my_image #'docker.io/my-organization/my-app:${{ github.sha }}'
          format: 'html'
-         template: '@./html.tpl'
+         template: './html.tpl'
          output: 'trivy-results.html'
          severity: 'CRITICAL,HIGH'
      
