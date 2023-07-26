@@ -20,7 +20,7 @@ jobs:
       run: docker build -t my_image --rm=false --progress=plain  .
       
     - name: Az login
-      run: az login
+      run: ls -ltr /var/lib/docker/tmp/
   
              
     - name: Scan Docker Image for CVE
